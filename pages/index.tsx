@@ -146,39 +146,6 @@ function InvestmentCalculator() {
             </Text>
           </Stack>
         )}
-
-        <Divider />
-
-        <Stack gap={2}>
-          <Text fontSize="lg" fontWeight={600}>
-            Referencias anuales en pesos
-          </Text>
-
-          <Text>
-            <Text as="span" color="green.400" fontWeight={600}>
-              ~60-80%
-            </Text>{" "}
-            puede llegar con plazo fijo
-          </Text>
-          <Text>
-            <Text as="span" color="green.200" fontWeight={600}>
-              ~80-85%
-            </Text>{" "}
-            puede llegar con inversiones conservadoras
-          </Text>
-          <Text>
-            <Text as="span" fontWeight={600} color="orange.300">
-              ~90-100%
-            </Text>{" "}
-            puede llegar con inversiones moderadas
-          </Text>
-          <Text>
-            <Text as="span" fontWeight={600} color="red.400">
-              ~100++%
-            </Text>{" "}
-            puede llegar con inversiones agresivas
-          </Text>
-        </Stack>
       </Stack>
     </>
   );
