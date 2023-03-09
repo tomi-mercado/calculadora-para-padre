@@ -23,7 +23,8 @@ function InvestmentCalculator() {
 
   const mensualReturnNecessary =
     (mensualInflationAprox + interestPerMonth) / 100;
-  const returnNecessary = ((mensualReturnNecessary + 1) ** 12 - 1) * 100;
+  const returnNecessary =
+    ((mensualReturnNecessary + 1) ** installments - 1) * 100;
   const anualReturnNecessary =
     ((returnNecessary / 100 + 1) ** (1 / (installments / 12)) - 1) * 100;
 
@@ -124,30 +125,30 @@ function InvestmentCalculator() {
 
         <Stack gap={2}>
           <Text fontSize="lg" fontWeight={600}>
-            Referencias
+            Referencias anuales en pesos
           </Text>
 
           <Text>
             <Text as="span" color="green.400" fontWeight={600}>
-              ~1-2%
+              ~60-80%
             </Text>{" "}
             puede llegar con plazo fijo
           </Text>
           <Text>
             <Text as="span" color="green.200" fontWeight={600}>
-              ~3-6%
+              ~80-85%
             </Text>{" "}
             puede llegar con inversiones conservadoras
           </Text>
           <Text>
             <Text as="span" fontWeight={600} color="orange.300">
-              ~7-10%
+              ~90-100%
             </Text>{" "}
             puede llegar con inversiones moderadas
           </Text>
           <Text>
             <Text as="span" fontWeight={600} color="red.400">
-              ~11+%
+              ~100++%
             </Text>{" "}
             puede llegar con inversiones agresivas
           </Text>
