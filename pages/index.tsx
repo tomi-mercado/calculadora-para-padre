@@ -10,6 +10,27 @@ import {
 import Head from "next/head";
 import { useState } from "react";
 
+const defalteMensualInterest = (
+  interestPerMonth: number,
+  month: number,
+  mensualInflationAprox: number
+) => {
+  return interestPerMonth / (1 + mensualInflationAprox / 100) ** month;
+};
+
+const promedyMensualInterest = (
+  interestPerMonth: number,
+  months: number,
+  mensualInflationAprox: number
+) => {
+  let sum = 0;
+  for (let i = 0; i < months; i++) {
+    sum += defalteMensualInterest(interestPerMonth, i, mensualInflationAprox);
+  }
+
+  return sum / months;
+};
+
 function InvestmentCalculator() {
   const [received, setReceived] = useState(0);
   const [installments, setInstallments] = useState(0);
@@ -19,7 +40,12 @@ function InvestmentCalculator() {
   const total = installments * amount;
 
   const interestPercent = (total / received - 1) * 100;
-  const interestPerMonth = ((total / received) ** (1 / installments) - 1) * 100;
+  let interestPerMonth = ((total / received) ** (1 / installments) - 1) * 100;
+  interestPerMonth = promedyMensualInterest(
+    interestPerMonth,
+    installments,
+    mensualInflationAprox
+  );
 
   const mensualReturnNecessary =
     (mensualInflationAprox + interestPerMonth) / 100;
