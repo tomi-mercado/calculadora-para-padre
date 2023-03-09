@@ -39,7 +39,7 @@ function InvestmentCalculator() {
       <Head>
         <title>Calculadora para préstamos de padre</title>
       </Head>
-      <Stack gap={6} maxW="80" margin="auto" py={6}>
+      <Stack gap={6} maxW="80" margin="auto" py={6} px={4}>
         <Stack gap={2}>
           <Text fontSize="lg" fontWeight={600}>
             Calculadora
